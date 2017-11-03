@@ -22,5 +22,6 @@ VOLUME "$USER_HOME_DIR/.m2"
 
 COPY ${WORKSPACE} /opt
 RUN cd /opt
+RUN mvn install
 #ENTRYPOINT ["/opt"]
-CMD ["mvn install"]
+CMD ["/bin/bash"]
