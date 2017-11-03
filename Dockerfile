@@ -22,5 +22,5 @@ VOLUME "$USER_HOME_DIR/.m2"
 
 COPY ${WORKSPACE} /opt
 
-ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
-CMD ["mvn"]
+ENTRYPOINT ["/opt"]
+CMD ["mvn install"]
