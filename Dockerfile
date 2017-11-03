@@ -20,8 +20,9 @@ COPY settings-docker.xml /usr/share/maven/ref/
 
 VOLUME "$USER_HOME_DIR/.m2"
 
-COPY ${WORKSPACE} /
-#RUN cd /opt
-#RUN mvn install
+COPY ${WORKSPACE} /opt
+RUN cd /opt
+RUN mvn install
+COPY /opt/target/*.war /
 #ENTRYPOINT ["/opt"]
-CMD ["mvn install"]
+CMD ["/bin/bash"]
