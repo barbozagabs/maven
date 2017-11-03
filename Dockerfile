@@ -20,7 +20,7 @@ COPY settings-docker.xml /usr/share/maven/ref/
 
 VOLUME "$USER_HOME_DIR/.m2"
 
-COPY /var/lib/jenkins/workspace/projeto-maven /
+COPY ${WORKSPACE} /opt
 
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
 CMD ["mvn"]
